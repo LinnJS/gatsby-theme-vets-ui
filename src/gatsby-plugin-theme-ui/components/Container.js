@@ -1,15 +1,26 @@
 /** @jsx jsx */
-import React from "react"
-import { Container as StyledContainer, jsx} from "theme-ui"
+import PropTypes from 'prop-types';
+import { Container as StyledContainer, jsx } from 'theme-ui';
 
-const Container = (props) => {
-  console.log('page props: ', props);
+const Container = props => {
   return (
-    <StyledContainer sx={{
-      maxWidth: '1000px',
-      width: '100%',
-    }}>{props.children}</StyledContainer>
-  )
+    <StyledContainer
+      sx={{
+        maxWidth: '1000px',
+        width: '100%',
+        marginTop: '40px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      {props.children}
+    </StyledContainer>
+  );
 };
 
-export default Container
+Container.propTypes = {
+  children: PropTypes.any,
+};
+
+export default Container;

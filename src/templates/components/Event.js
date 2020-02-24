@@ -1,17 +1,18 @@
 import React from 'react';
-import { Styled } from 'theme-ui'
-
-const getDate = (date, { day = true, month = true, year = true } = {}) => {
-  return date.toLocaleString('en-US', {
-    day: day ? 'numeric' : undefined,
-    month: month ? 'long' : undefined,
-    year: year ? 'numeric' : undefined,
-  });
-};
+import PropTypes from 'prop-types';
+import { Styled } from 'theme-ui';
 
 const EventDate = ({ startDate, endDate }) => {
   const start = new Date(startDate);
   const end = new Date(endDate);
+
+  const getDate = (date, { day = true, month = true, year = true } = {}) => {
+    return date.toLocaleString('en-US', {
+      day: day ? 'numeric' : undefined,
+      month: month ? 'long' : undefined,
+      year: year ? 'numeric' : undefined,
+    });
+  };
 
   const isOneDay = start.toDateString() === end.toDateString();
 
@@ -28,6 +29,11 @@ const EventDate = ({ startDate, endDate }) => {
   );
 };
 
+EventDate.propTypes = {
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
+};
+
 const Event = ({ name, location, url, startDate, endDate }) => {
   return (
     <div>
@@ -42,6 +48,14 @@ const Event = ({ name, location, url, startDate, endDate }) => {
       </Styled.p>
     </div>
   );
+};
+
+Event.propTypes = {
+  name: PropTypes.string,
+  location: PropTypes.string,
+  url: PropTypes.string,
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
 };
 
 export default Event;

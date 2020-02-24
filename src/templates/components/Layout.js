@@ -1,6 +1,7 @@
-import React from "react"
-import { Heading, Container, ThemeProvider } from "theme-ui"
-import { Header } from 'gatsby-theme-vets-ui';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Heading, ThemeProvider } from 'theme-ui';
+import { Header, Container } from 'gatsby-theme-vets-ui/src/gatsby-plugin-theme-ui';
 import theme from '../../theme';
 
 const Layout = ({ children }) => {
@@ -14,7 +15,11 @@ const Layout = ({ children }) => {
         <Container>{children}</Container>
       </main>
     </ThemeProvider>
-  )
+  );
 };
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.any,
+};
+
+export default Layout;

@@ -1,39 +1,19 @@
 export const theme = {
-  space: [
-    0,
-    4,
-    8,
-    16,
-    32,
-    64,
-    128,
-    256,
-    512
-  ],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: '"Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif',
     heading: 'Bitter, "Open Sans", serif',
-    monospace: 'Menlo, monospace'
+    monospace: 'Menlo, monospace',
   },
-  fontSizes: [
-    12,
-    14,
-    16,
-    20,
-    24,
-    32,
-    48,
-    64,
-    96
-  ],
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
+    bold: 700,
     heading: 700,
-    bold: 700
   },
   lineHeights: {
     body: 1.5,
-    heading: 1.125
+    heading: 1.125,
   },
   colors: {
     // elements
@@ -91,120 +71,241 @@ export const theme = {
   },
   styles: {
     root: {
-      fontFamily: 'body',
-      lineHeight: 'body',
-      fontWeight: 'body',
       backgroundColor: 'background',
-    },
-    buttons: {
-      primary: {
-        fontWeight: 'bold',
-        color: 'white',
-        bg: 'primary',
-        '&:hover': {
-          bg: 'goldDarker',
-        },
-      },
-      secondary: {
-        fontWeight: 'bold',
-        color: 'background',
-        bg: 'secondary',
-        '&:hover': {
-          bg: 'goldDarker',
-        },
-      },
+      fontFamily: 'body',
+      fontWeight: 'body',
+      lineHeight: 'body',
     },
     h1: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '2.2em',
       fontWeight: 'heading',
-      fontSize: '2.2em'
+      lineHeight: 'heading',
     },
     h2: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '1.875em',
       fontWeight: 'heading',
-      fontSize: '1.875em'
+      lineHeight: 'heading',
     },
     h3: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '1.3em',
       fontWeight: 'heading',
-      fontSize: '1.3em'
+      lineHeight: 'heading',
     },
     h4: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '1.0625em',
       fontWeight: 'heading',
-      fontSize: '1.0625em'
+      lineHeight: 'heading',
     },
     h5: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '1em',
       fontWeight: 'heading',
-      fontSize: '1em'
+      lineHeight: 'heading',
     },
     h6: {
       color: 'text',
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      fontSize: '0.9375em',
       fontWeight: 'heading',
-      fontSize: '0.9375em'
+      lineHeight: 'heading',
     },
     p: {
       color: 'text',
       fontFamily: 'body',
       fontWeight: 'body',
-      lineHeight: 'body'
+      lineHeight: 'body',
     },
     a: {
-      color: 'primary'
+      color: 'primary',
+      outline: theme => `${theme.colors.focus} auto 5px`,
+      '&:focus': {},
     },
     pre: {
       fontFamily: 'heading',
-      fontWeight: 'body',
       fontSize: '1.25em',
+      fontWeight: 'body',
       overflowX: 'auto',
       code: {
-        color: 'inherit'
-      }
+        color: 'inherit',
+      },
     },
     code: {
       fontFamily: 'monospace',
-      fontSize: 'inherit'
+      fontSize: 'inherit',
     },
     table: {
-      width: '100%',
       borderCollapse: 'separate',
-      borderSpacing: 0
+      borderSpacing: 0,
+      width: '100%',
     },
     th: {
+      borderBottomStyle: 'solid',
       textAlign: 'left',
-      borderBottomStyle: 'solid'
     },
     td: {
+      borderBottomStyle: 'solid',
       textAlign: 'left',
-      borderBottomStyle: 'solid'
     },
     img: {
-      maxWidth: '100%'
+      maxWidth: '100%',
     },
     ul: {
-      listStyle: 'none'
+      listStyle: 'square',
     },
     li: {
       margin: '20px 0',
     },
     header: {
-      color: 'secondary',
       backgroundColor: 'focus',
+      color: 'secondary',
     },
-  }
+  },
+  // form element styles
+  forms: {
+    label: {
+      color: 'text',
+      fontSize: '16px',
+      marginBottom: '5px',
+    },
+    input: {
+      border: theme => `1px solid ${theme.colors.gray}`,
+      borderColor: 'gray',
+      borderRadius: '0',
+      boxSizing: 'border-box',
+      color: '#212121',
+      display: 'block',
+      fontSize: 'fontSize.2',
+      height: 'auto',
+      lineHeight: '1',
+      maxWidth: '460px',
+      padding: '12px 13px',
+      '&:focus': {
+        borderColor: 'focus',
+        boxShadow: theme => `0 0 0 1px ${theme.colors.focus}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      border: theme => `1px solid ${theme.colors.gray}`,
+      borderRadius: '0',
+      maxWidth: '460px',
+      '&:focus': {
+        borderColor: 'focus',
+        boxShadow: theme => `0 0 0 1px ${theme.colors.focus}`,
+        outline: 'none',
+      },
+    },
+    textarea: {
+      border: theme => `1px solid ${theme.colors.gray}`,
+      borderColor: 'gray',
+      borderRadius: '0',
+      maxWidth: '460px',
+      '&:focus': {
+        borderColor: 'focus',
+        boxShadow: theme => `0 0 0 1px ${theme.colors.focus}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      bg: 'muted',
+      color: 'primary',
+      maxWidth: '460px',
+    },
+    checkbox: {
+      color: 'base',
+      fontWeight: '100',
+      height: '35px',
+      maxWidth: '460px',
+      width: '35px',
+      'input:unchecked ~ &': {
+        // checked background
+        border: theme => `1px solid ${theme.colors.gray}`,
+      },
+      'input:checked ~ &': {
+        // checked background
+        color: 'primary',
+      },
+      'input:focus ~ &': {
+        borderColor: 'focus',
+        boxShadow: theme => `0 0 0 1px ${theme.colors.focus}`,
+        outline: 'none',
+      },
+    },
+    radio: {
+      'input:checked ~ &': {
+        // checked background
+        color: 'primary',
+      },
+      'input:focus ~ &': {
+        outline: 'none',
+      },
+    },
+  },
+  // button styles
+  buttons: {
+    primary: {
+      bg: 'primary',
+      borderRadius: '5px',
+      color: 'white',
+      fontWeight: '700',
+      '&:hover': {
+        bg: 'primaryDarker',
+      },
+      '&:focus': {
+        bg: 'primaryDarker',
+        outlineColor: 'focus',
+      },
+      '&:active': {
+        bg: 'primaryDarkest',
+      },
+    },
+    secondary: {
+      bg: 'white',
+      border: theme => `2px solid ${theme.colors.primary}`,
+      borderRadius: '5px',
+      color: 'primary',
+      fontWeight: '700',
+      '&:hover': {
+        bg: 'white',
+        border: theme => `2px solid ${theme.colors.primaryDarker}`,
+        color: 'primaryDarker',
+      },
+      '&:focus': {
+        bg: 'primaryDarker',
+        outlineColor: 'focus',
+      },
+      '&:active': {
+        bg: 'white',
+        border: theme => `2px solid ${theme.colors.primaryDarkest}`,
+        color: 'primaryDarkest',
+      },
+    },
+    green: {
+      bg: 'green',
+      borderRadius: '5px',
+      color: 'white',
+      fontWeight: '700',
+      '&:hover': {
+        bg: 'greenDarker',
+      },
+      '&:focus': {
+        bg: 'greenDarker',
+        outlineColor: 'focus',
+      },
+      '&:active': {
+        bg: 'greenDarker',
+      },
+    },
+  },
 };
 
-export default theme
+export default theme;

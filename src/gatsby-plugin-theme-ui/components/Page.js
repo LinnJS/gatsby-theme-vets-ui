@@ -1,17 +1,20 @@
 /** @jsx jsx */
-import React from "react"
-import { Container, ThemeProvider, jsx } from "theme-ui"
+import { Container, ThemeProvider, jsx } from 'theme-ui';
+import PropTypes from 'prop-types';
 import theme from '../../theme';
 
-const Page = (props) => {
-  console.log('page props: ', props);
+const Page = props => {
   return (
     <ThemeProvider theme={theme}>
-      <main>
+      <main style={{ display: 'flex', justifyContent: 'center' }}>
         <Container>{props.children}</Container>
       </main>
     </ThemeProvider>
-  )
+  );
 };
 
-export default Page
+Page.propTypes = {
+  children: PropTypes.any,
+};
+
+export default Page;

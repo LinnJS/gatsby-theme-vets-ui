@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import Layout from './components/Layout';
@@ -23,6 +24,12 @@ const EventsTemplate = ({ data: { event } }) => {
       <Event {...event} />
     </Layout>
   );
+};
+
+EventsTemplate.propTypes = {
+  data: PropTypes.shape({
+    event: PropTypes.any,
+  }),
 };
 
 export default EventsTemplate;
