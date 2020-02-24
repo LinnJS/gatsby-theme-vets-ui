@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading, ThemeProvider } from 'theme-ui';
-import { Header, Container } from 'gatsby-theme-vets-ui/src/gatsby-plugin-theme-ui';
+import { Header, Container } from '@linnjs/gatsby-theme-vets-ui/src/gatsby-plugin-theme-ui';
 import theme from '../../theme';
 
 const Layout = ({ children }) => {
-  console.log('theme: ', theme);
   return (
     <ThemeProvider theme={theme}>
       <Header>
