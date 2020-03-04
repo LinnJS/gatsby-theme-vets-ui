@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import PropTypes from 'prop-types';
-import { jsx, Styled } from 'theme-ui';
-import { Link } from 'gatsby';
+import { jsx } from 'theme-ui';
 import HeaderLogo from '../../assets/header-logo.png';
 
 export const Header = props => (
@@ -30,9 +29,7 @@ export const Header = props => (
     }}
   >
     <section>
-      <Styled.a as={Link} to="/">
         <img src={HeaderLogo} alt="VSA Logo" />
-      </Styled.a>
       <aside>{props.children}</aside>
     </section>
   </header>
